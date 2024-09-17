@@ -1,6 +1,10 @@
-(lang dune 2.0)
+(lang dune 3.0)
 
 (formatting
  (enabled_for dune))
 
-(name bitv)
+(package
+ (name bitv))
+
+(package
+ (name bitv-spec))

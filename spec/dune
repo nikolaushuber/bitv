@@ -1,0 +1,23 @@
+(library
+ (name bitv_spec)
+ (modules bitv_spec)
+ (libraries bitv)
+ (package bitv-spec))
+
+(rule
+ (alias runtest)
+ (mode promote)
+ (action
+  (with-stdout-to
+   dune.bitv.inc
+   (setenv
+    ORTAC_ONLY_PLUGIN
+    dune-rules
+    (run
+     ortac
+     dune
+     qcheck-stm
+     bitv_spec.mli
+     --package=bitv-spec)))))
+
+(include dune.bitv.inc)

@@ -11,6 +11,12 @@ doc: "https://backtracking.github.io/bitv"
 depends: [
   "ocaml" {>= "4.03"}
   "dune" {>= "2.0.0"}
+  "ortac-qcheck-stm" {>= "0.3.0"}
+  "ortac-dune" {>= "0.3.0"}
+]
+pin-depends: [
+  ["ortac-qcheck-stm.0.3.0" "git+https://github.com/nikolaushuber/ortac.git#fork-prop"]
+  ["ortac-runtime-qcheck-stm.0.3.0" "git+https://github.com/nikolaushuber/ortac.git#fork-prop"]
 ]
 build: [
   ["dune" "subst"] {dev}
